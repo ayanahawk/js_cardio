@@ -1,4 +1,11 @@
-const { filterByLength, everyNPerson, initials } = require('./cardio');
+const {
+  filterByLength,
+  everyNPerson,
+  initials,
+  countLetter,
+  peopleWithPosition,
+  sortByFirstName,
+} = require('./cardio');
 
 const people = [
   'Faber Guerreau',
@@ -23,7 +30,7 @@ const people = [
   'Basile Phonix',
 ];
 
-xdescribe('filterByLength', () => {
+describe('filterByLength', () => {
   it('filters by length of 15', () => {
     const answer = [
       'Gilbertine Stichall',
@@ -43,7 +50,7 @@ xdescribe('filterByLength', () => {
   });
 });
 
-xdescribe('everyNPerson', () => {
+describe('everyNPerson', () => {
   it('returns every third person', () => {
     const answer = [
       'Faber Guerreau',
@@ -67,5 +74,85 @@ xdescribe('everyNPerson', () => {
 });
 
 describe('initials', () => {
-  it(`returns everyone's initials`, () => {});
+  it(`returns everyone's initials`, () => {
+    const answer = [
+      'FG',
+      'GS',
+      'CC',
+      'JC',
+      'TM',
+      'RC',
+      'HE',
+      'TW',
+      'BP',
+      'ND',
+      'BL',
+      'AT',
+      'BT',
+      'DC',
+      'RM',
+      'TB',
+      'LT',
+      'WC',
+      'TB',
+      'BP',
+    ];
+    expect(initials(people)).toEqual(answer);
+  });
+});
+
+describe('peopleWithPosition', () => {
+  it(`returns everyone's name with their position`, () => {
+    const answer = [
+      '0: Faber Guerreau',
+      '1: Gilbertine Stichall',
+      '2: Cristina Cuckoo',
+      '3: Johnette Chatelot',
+      '4: Trish Mayou',
+      '5: Ruth Connell',
+      '6: Hamid Elsegood',
+      '7: Thorstein Woodward',
+      '8: Bethena Porte',
+      '9: Nelle Durek',
+      '10: Bastien Leyrroyd',
+      '11: Albie Tranfield',
+      '12: Bryce Temprell',
+      '13: Darya Chinery',
+      '14: Rea Matoshin',
+      '15: Tommie Benda',
+      '16: Lowell Trowel',
+      '17: Wayne Claughton',
+      '18: Teena Bansal',
+      '19: Basile Phonix',
+    ];
+    expect(peopleWithPosition(people)).toEqual(answer);
+  });
+});
+
+describe('sortByFirstName', () => {
+  it('sorts by first name', () => {
+    const answer = [
+      'Albie Tranfield',
+      'Basile Phonix',
+      'Bastien Leyrroyd',
+      'Bethena Porte',
+      'Bryce Temprell',
+      'Cristina Cuckoo',
+      'Darya Chinery',
+      'Faber Guerreau',
+      'Gilbertine Stichall',
+      'Hamid Elsegood',
+      'Johnette Chatelot',
+      'Lowell Trowel',
+      'Nelle Durek',
+      'Rea Matoshin',
+      'Ruth Connell',
+      'Teena Bansal',
+      'Thorstein Woodward',
+      'Tommie Benda',
+      'Trish Mayou',
+      'Wayne Claughton',
+    ];
+    expect(sortByFirstName(people)).toEqual(answer);
+  });
 });
