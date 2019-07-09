@@ -1,3 +1,4 @@
+
 const {
   filterByLength,
   everyNPerson,
@@ -5,6 +6,10 @@ const {
   countLetter,
   peopleWithPosition,
   sortByFirstName,
+  sortByLastName,
+  countTotalCharacters,
+  everyoneHasLetter,
+  someoneHasLetter,
 } = require('./cardio');
 
 const people = [
@@ -98,6 +103,53 @@ describe('initials', () => {
       'BP',
     ];
     expect(initials(people)).toEqual(answer);
+  });
+});
+
+describe('sortByLastName', () => {
+  it('returns a sorted list of names by last name', () => {
+    const answer = [
+      'Teena Bansal',
+      'Tommie Benda',
+      'Johnette Chatelot',
+      'Darya Chinery',
+      'Wayne Claughton',
+      'Ruth Connell',
+      'Cristina Cuckoo',
+      'Nelle Durek',
+      'Hamid Elsegood',
+      'Faber Guerreau',
+      'Bastien Leyrroyd',
+      'Rea Matoshin',
+      'Trish Mayou',
+      'Basile Phonix',
+      'Bethena Porte',
+      'Gilbertine Stichall',
+      'Bryce Temprell',
+      'Albie Tranfield',
+      'Lowell Trowel',
+      'Thorstein Woodward',
+    ];
+    // console.log(sortByLastName(people));
+    expect(sortByLastName(people)).toEqual(answer);
+  });
+});
+
+describe('countTotalCharacters', () => {
+  it('counts the total characters in a name (including spaces)', () => {
+    expect(countTotalCharacters(people)).toEqual(279);
+  });
+});
+
+describe('someoneHasLetter', () => {
+  it('returns if one or more people have the letter', () => {
+    expect(someoneHasLetter(people, 'e')).toEqual(true);
+  });
+});
+
+describe('everyoneHasLetter', () => {
+  it('returns if all people have the letter', () => {
+    expect(everyoneHasLetter(people, 'z')).toEqual(false);
   });
 });
 

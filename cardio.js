@@ -61,8 +61,12 @@ function sortByFirstName(people) {}
  */
 function sortByLastName(people) {}
 
-// Use reduce
-function countLetter(people, letter) {}
+/**
+ * Counts all the characters in the people array (including spaces)
+ * @param {Array} people Array of names
+ * @return Number of characters
+ */
+function countTotalCharacters(people) {}
 
 /**
  * Returns `true` if everyone in `people` has `letter` in their name.
@@ -88,7 +92,7 @@ module.exports = {
   initials,
   sortByFirstName,
   sortByLastName,
-  countLetter,
+  countTotalCharacters,
   everyoneHasLetter,
   someoneHasLetter,
   peopleWithPosition,
