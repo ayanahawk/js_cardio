@@ -1,9 +1,7 @@
-
 const {
   filterByLength,
   everyNPerson,
   initials,
-  countLetter,
   peopleWithPosition,
   sortByFirstName,
   sortByLastName,
