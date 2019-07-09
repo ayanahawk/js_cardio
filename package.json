@@ -1,0 +1,22 @@
+{
+  "name": "js-cardio",
+  "version": "1.0.0",
+  "description": "Solve these problems using your expert JS knowledge! `console.log` your solutions to the command line! Make good use of the debugger when you get stuck.",
+  "main": "cardio.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talent-path-la/js-cardio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/talent-path-la/js-cardio/issues"
+  },
+  "homepage": "https://github.com/talent-path-la/js-cardio#readme",
+  "dependencies": {
+    "jest": "^24.8.0"
+  }
+}
