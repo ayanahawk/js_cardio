@@ -43,7 +43,7 @@ We are using Jest for testing.
 2. Create your own empty repository on GitHub
 3. Open locally and change the remote:
       ```bash
-      $ git remote set-url https://github.com/USERNAME/REPOSITORY.git
+      $ git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
       ```
 4. Install dependencies
       ```bash
