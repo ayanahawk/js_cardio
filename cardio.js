@@ -45,27 +45,21 @@ function initials(people) {}
  *    peopleWithPosition(['Kanye', 'Barack'])
  *    // → ['1. Kanye', '2. Barack']
  */
-function peopleWithPosition(people) {
-  return people.map((p, i) => `${i}: ${p}`);
-}
+function peopleWithPosition(people) {}
 
 /**
  * Sorts `people` by first name
  * @param {string[]} people
  * @returns {string[]} sorted array
  */
-function sortByFirstName(people) {
-  return people.sort();
-}
+function sortByFirstName(people) {}
 
 /**
  * Sorts `people` by last name
  * @param {string[]} people
  * @returns {string[]} sorted array
  */
-function sortByLastName(people) {
-  return people.sort((l, r) => (l.split(' ')[1] < r.split(' ')[1] ? -1 : 1));
-}
+function sortByLastName(people) {}
 
 // Use reduce
 function countLetter(people, letter) {}

@@ -1,8 +1,9 @@
 # JS Cardio 🏃🏼
 
+> Inspired by Wes Bos' [JavaScript30](https://javascript30.com/) lesson
+
 Solve these problems using your expert JS knowledge!
-`console.log` your solutions to the command line!
-Make good use of the debugger when you get stuck.
+Your goal is to make all of the tests pass.
 
 ```js
 [
