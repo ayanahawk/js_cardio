@@ -14,7 +14,8 @@ function filterByLength(people, length) {
 
 /**
  * Returns an array of every nth person.
- * Note that counting starts at 0,
+ * Note that counting starts
+ * at 0,
  * so the returned array will always include (at least) the first person.
  *
  * @param  {string[]} people
@@ -30,7 +31,7 @@ function everyNPerson(people, n) {
     return people;
   }
   // return people.filter((people, n) => n % 2);
-  return people.filter((people, n) => n % n === 0);
+  return people.filter((people, i) => i % n === 0);
 }
 
 /**
@@ -64,12 +65,8 @@ function initials(people) {
  *    // → ['1. Kanye', '2. Barack']
  */
 function peopleWithPosition(people) {
-  const newArr = [];
-
-  people.forEach((name, index) => {
-    newArr.push(`${index}: ${name}`);
-  });
-  return newArr;
+  // const newArr = [];
+  return people.map((name, index) => `${index}: ${name}`);
 }
 
 /**
@@ -78,13 +75,8 @@ function peopleWithPosition(people) {
  * @returns {string[]} sorted array
  */
 function sortByFirstName(people) {
-  // const lit = [];
-  // people.sort(name => {
-  //   const split = name.split(' ');
-  //   const first = split[0];
-  //   lit.push(`${first}`);
-  // });
-  // return lit;
+  const newArr = people.sort();
+  return newArr;
 }
 
 /**
@@ -92,15 +84,27 @@ function sortByFirstName(people) {
  * @param {string[]} people
  * @returns {string[]} sorted array
  */
-function sortByLastName(people) {}
+function sortByLastName(people) {
+  const newArr = [];
+
+  people.sort(names => {
+    // const split = names.split(' ');
+    const firstName = names.split(' ')[0];
+    const lastName = names.split(' ')[1];
+    const newName = `${lastName} ${firstName}`;
+    newArr.push(newName);
+  });
+  return newArr;
+}
 
 /**
  * Counts all the characters in the people array (including spaces)
  * @param {Array} people Array of names
  * @return Number of characters
  */
+
 function countTotalCharacters(people) {
-  return people.reduce((total, current) => total + current.length, 0);
+  return people.reduce((arr, current) => arr + current.length, 0);
 }
 
 /**
@@ -111,13 +115,13 @@ function countTotalCharacters(people) {
  * @returns {boolean}
  */
 function everyoneHasLetter(people, letter) {
-  const lit = [];
-  people.sort(name => {
-    const split = name.split(' ');
-    const first = split[0];
-    lit.push(`${first}`);
+  // const returnValue = true;
+  people.forEach(names => {
+    if (!names.includes(letter)) {
+      return false;
+    }
   });
-  return lit;
+  // return true;
 }
 
 /**
