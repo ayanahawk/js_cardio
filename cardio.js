@@ -28,10 +28,9 @@ function filterByLength(people, length) {
  */
 function everyNPerson(people, n) {
   if (n === 0) {
-    return people;
+    return [...people];
   }
-  // return people.filter((people, n) => n % 2);
-  return people.filter((people, i) => i % n === 0);
+  return people.filter((_, i) => i % n === 0 || n === 0);
 }
 
 /**
@@ -44,15 +43,13 @@ function everyNPerson(people, n) {
  *    // → ['KW', 'BO']
  */
 function initials(people) {
-  const newArr = [];
+  // const newArr = [];
+  const people2 = people.map(person => {
+    const fullName = person.split(' ');
+    const [first, last] = fullName;
 
-  people.map(name => {
-    const splitName = name.split(' ');
-    const firstName = splitName[0];
-    const lastName = splitName[1];
-    newArr.push(firstName[0] + lastName[0]);
+    return `${first} ${last}`;
   });
-  return newArr;
 }
 
 /**
@@ -65,7 +62,6 @@ function initials(people) {
  *    // → ['1. Kanye', '2. Barack']
  */
 function peopleWithPosition(people) {
-  // const newArr = [];
   return people.map((name, index) => `${index}: ${name}`);
 }
 
@@ -75,8 +71,9 @@ function peopleWithPosition(people) {
  * @returns {string[]} sorted array
  */
 function sortByFirstName(people) {
-  const newArr = people.sort();
-  return newArr;
+  return people.concat().sort();
+
+  // return [...people].sort();
 }
 
 /**
@@ -84,17 +81,20 @@ function sortByFirstName(people) {
  * @param {string[]} people
  * @returns {string[]} sorted array
  */
-function sortByLastName(people) {
-  const newArr = [];
 
-  people.sort(names => {
-    // const split = names.split(' ');
-    const firstName = names.split(' ')[0];
-    const lastName = names.split(' ')[1];
-    const newName = `${lastName} ${firstName}`;
-    newArr.push(newName);
+function sortByLastName(people) {
+  const sortedArray = [...people];
+  return sortedArray.sort((a, b) => {
+    const alastName = a.split(' ')[1];
+    const blastName = b.split(' ')[1];
+    if (alastName > blastName) {
+      return 1;
+    }
+    return -1;
   });
-  return newArr;
+
+  // const people2 = [...people];
+  // return people2.sort((left, right) => left.split(' ')[1] > right.split(' ')[1] ? 1 : -1);
 }
 
 /**
@@ -115,12 +115,13 @@ function countTotalCharacters(people) {
  * @returns {boolean}
  */
 function everyoneHasLetter(people, letter) {
-  // const returnValue = true;
-  people.forEach(names => {
-    if (!names.includes(letter)) {
-      return false;
-    }
-  });
+  return people.every(person => person.includes(letter));
+  // const returnValue = false;
+  // people.forEach(names => {
+  //   if (!names.includes(letter)) {
+  //     return false;
+  //   }
+  // });
   // return true;
 }
 
